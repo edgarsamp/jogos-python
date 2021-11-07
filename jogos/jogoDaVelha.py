@@ -1,9 +1,30 @@
 def jogo_da_velha():
-    tabuleiro = [[0,0,1], [0,1,0], [1,0,0]]
+    tabuleiro = [[0,0,0], [0,0,0], [0,0,0]]
 
     imprime_tabuleiro(tabuleiro)
-    print(check_status_jogo(tabuleiro))
 
+    jogador_da_vez = 1
+    jogadas = 0
+
+    while(not check_status_jogo(tabuleiro)):
+        jogadas +=1
+        jogador_da_vez += 1
+        jogador_da_vez %= 2
+
+        while(True): # Enquanto nao for uma jogada valida
+            jogada = input("jogador " + str(1+jogador_da_vez%2)+ " é a sua vez ")
+            if(joga(jogada, jogador_da_vez, tabuleiro)):
+                break
+            else:
+                print("Jogada inválida!")
+        if(jogadas == 9):
+            break
+        imprime_tabuleiro(tabuleiro)
+    
+    if(check_status_jogo(tabuleiro)):
+        print("jogador", str(1+jogador_da_vez%2), "ganhou!!")
+    elif(jogadas == 9):
+        print("Deu velha")
 
 def check_status_jogo(tabuleiro):
     # Checa se algum jogador alinhou 3 em uma linha
@@ -27,8 +48,15 @@ def check_status_jogo(tabuleiro):
         return True 
 
     return False
-        
 
+def joga(jogada,jogador_da_vez , tabuleiro):
+    x, y = list(map(int, jogada.split()))
+
+    if(tabuleiro[x-1][y-1] == 0): #Se é uma jogada válida
+        tabuleiro[x-1][y-1] = -1 if jogador_da_vez == 1 else 1 # se o jogador_da_vez for 1 ele coloca -1 no tabuleiro
+        return True
+    else:
+        return False
 
 def imprime_tabuleiro(tabuleiro):
     tab = [[' ',' ',' '], [' ',' ',' '], [' ',' ',' ']]
