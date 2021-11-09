@@ -1,4 +1,4 @@
-def jogo_da_velha():
+def jogar():
     tabuleiro = [[0,0,0], [0,0,0], [0,0,0]]
 
     imprime_tabuleiro(tabuleiro)
@@ -76,4 +76,4 @@ def imprime_tabuleiro(tabuleiro):
 
 
 if __name__ == "__main__":
-    jogo_da_velha()
+    jogar()

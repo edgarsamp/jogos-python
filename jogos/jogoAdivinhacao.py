@@ -1,6 +1,6 @@
 import random
 
-def jogo_de_adivinhacao():
+def jogar():
     print("Jogo de adivinhacao")
     while(True):
         opcao = int(input('1 - Adivinhar um numero\n2 - Ter um numero adivinhado\n'))
@@ -37,7 +37,7 @@ def adivinhar():
         print("Parabens voce conseguiu adivinhar o numero e ainda sobraram", chances, "tentativas!")
 
 def adivinhado():
-    print("Escolha um numero de 1 a 20, o programa tentara adivinhar e voce deve respoder com:")
+    print("Escolha um numero inteiro entre 1 a 20, o programa tentara adivinhar e voce deve respoder com:")
     print("maior   - caso o chute do computador for menor que seu numero")
     print("maior   - caso o chute do computador for menor que seu numero")
     print("acertou - caso o chute do computador estiver certo")
@@ -64,4 +64,4 @@ def adivinhado():
     print(f"O computador precisou de {tentativas} para acertar seu numero")
 
 if __name__ == "__main__":
-    jogo_de_adivinhacao()
+    jogar()

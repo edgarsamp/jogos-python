@@ -1,7 +1,7 @@
 from os import sep
 import random
 
-def jogo_da_forca():
+def jogar():
     print("Jogo da forca")
     tentativas = set()
     ganhou = False
@@ -97,4 +97,4 @@ def desenha_forca(qnt_erros):
 
 
 if __name__ == "__main__":
-    jogo_da_forca()
+    jogar()
