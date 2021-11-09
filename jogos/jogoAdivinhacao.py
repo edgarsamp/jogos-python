@@ -9,5 +9,11 @@ def jogo_de_adivinhacao():
     else:
         adivinhado()
 
+def adivinhar():
+    print("adivinhar")
+
+def adivinhado():
+    print("adivinhado")
+
 if __name__ == "__main__":
     jogo_de_adivinhacao()
