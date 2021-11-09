@@ -14,6 +14,7 @@ def adivinhar():
 
 def adivinhado():
     print("adivinhado")
+    
 
 if __name__ == "__main__":
     jogo_de_adivinhacao()
